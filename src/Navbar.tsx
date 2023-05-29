@@ -8,15 +8,10 @@ import {
   chakra,
   Hide,
   Show,
-  Menu,
-  MenuList,
-  MenuItem,
-  MenuButton,
-  IconButton,
 } from '@chakra-ui/react';
-import { HamburgerIcon } from '@chakra-ui/icons';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
 
+import { ColorModeSwitcher } from './ColorModeSwitcher';
+import Hamburger from './Hamburger';
 const Navbar = () => {
   // Name text
   // Navbar style
@@ -25,26 +20,10 @@ const Navbar = () => {
     <chakra.header id="header">
       <Flex w={'100%'} py={4} px={4} justify={'space-between'}>
         <Center>
-          {/* Hamburger Menu */}
           <Hide below="md">
             <Text style={{ whiteSpace: 'nowrap' }}>Tien Tran</Text>
           </Hide>
-          <Show below="sm">
-            <Menu>
-              <MenuButton
-                as={IconButton}
-                aria-label={'Options'}
-                variant={'outline'}
-                icon={<HamburgerIcon />}
-              />
-              <MenuList>
-                <MenuItem>Home</MenuItem>
-                <MenuItem>About</MenuItem>
-                <MenuItem>Bookmarks</MenuItem>
-                <MenuItem>Projects</MenuItem>
-              </MenuList>
-            </Menu>
-          </Show>
+          <Hamburger />
         </Center>
 
         <Hide below="sm">
